@@ -1,0 +1,64 @@
+
+/* Default Styles' Import */
+@import "defaultCSS.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Fresca&family=Signika+Negative:wght@300&family=Spline+Sans+Mono:wght@300&display=swap');
+
+@import "dayCSS/feedback.css";
+@import "dayCSS/topnav.css";
+@import "dayCSS/home.css";
+@import "dayCSS/bio.css";
+@import "dayCSS/work.css";
+
+/* Common Styles */
+
+:root {
+	--color1: #dcde9f;
+	--color2: #f3f4d3;
+	--color3: #92a65f;
+	--color4: #446129;
+	--color5: #183114;
+}
+
+* { 
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+	line-height: 1.5; 
+}
+body {
+	background-color: var(--color1); 
+}
+h1, h2, h3, i, iframe { 
+	font-family: 'Signika Negative', sans-serif; 
+}
+p, button, a, span, summary, details, label, ul, li, div, content *, section { 
+	font-family: 'Fresca', sans-serif;
+}
+u:hover {
+	cursor: pointer;
+	color: var(--color5);
+}
+input::placeholder, textarea::placeholder, input, textarea {
+	font-family: 'Spline Sans Mono', monospace;
+}
+
+
+.blank {
+	height: 50px;
+}
+
+body::-webkit-scrollbar { 
+	width: 10px; 
+	height: 0px; 
+}
+body::-webkit-scrollbar-track { 
+	border-radius: 5px; 
+}
+body::-webkit-scrollbar-track:hover {
+	background-color: var(--color3); 
+}
+body::-webkit-scrollbar-thumb { 
+	background-color: var(--color2);
+	border: 2px solid var(--color5);  
+	border-radius: 5px; 
+}	

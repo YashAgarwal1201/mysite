@@ -1,0 +1,72 @@
+
+/* Home section CSS */
+.home {
+	width: 100%;
+	padding: 30px 0px 0px;
+	background-color: var(--color4);
+	display: none;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+}
+	.home1, .home3 {
+		text-align: center;
+		color:  var(--color1);
+	}
+	.home1 h1 {
+		font-size: 50px;
+		color: var(--color2);
+	}
+	.home2 {
+		width: 100%;
+		padding: 20px 30px;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+		.home2Btn {
+			width: 100px;
+			margin: 100px;
+			height: 100px;
+			padding: 20px;
+			border-radius: 50%;
+			cursor: pointer;
+			background-color: var(--color2);
+			color: var(--color5);
+			position: relative;
+		}
+		.home2Btn:hover {
+			background-color: var(--color1);
+			color: var(--color3);
+		}
+		.home2Btn::after {
+			content: '';
+			position: absolute;
+			top: -18px;
+			left: -18px;
+			padding: 10px;
+			margin: auto;
+			border: 2px dashed var(--color3);
+			height: 110px;
+			width: 110px;
+			border-radius: 50%;
+			animation: spin2 10s linear infinite;
+		}
+		@keyframes spin2 {
+			100% { transform: rotateZ(360deg); }
+		}
+		.home2Btn i {
+			vertical-align: middle;
+			font-size: 60px;
+			width: 100%;
+		}
+	.home3  {
+		padding-bottom: 30px;
+	}	
+	.home4 {
+		width: 100%;
+		padding: 50px 30px 50px 30px;
+		background-color: var(--color3);
+		color: var(--color5);
+	}
