@@ -1,0 +1,8 @@
+
+	<h1>Search Bar</h1>
+	<div class="search">
+		<form>
+			<input type="search" name="search" placeholder="Search..." autocomplete="off">
+			<button type="submit"><i class="material-icons">search</i></button>
+		</form>
+	</div>

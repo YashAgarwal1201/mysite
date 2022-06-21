@@ -1,0 +1,38 @@
+
+	<div class="form">
+		<h1>Feedback form</h1>
+		<form action="" method="">
+			<div id="tf1">
+				<label>Name:</label><br>
+				<input type="text" name="Name" placeholder="Your Name..." required="" autocomplete="off" size="">
+			</div><br><br>
+			<div id="tf2">
+				<label>E-mail:</label><br>
+				<input type="email" name="E-mail" placeholder="Your E-mail..." required="" autocomplete="off" size="">
+			</div><br><br>
+			<div id="tf3">
+				<label>Feedback:</label><br>
+				<textarea name="Message" placeholder="Your Message..." autocomplete="off" size=""></textarea>
+			</div>
+			<div id="tf4">
+				<label>Attachment:</label><br>
+				<input type="file" name="Attachment" multiple="on" id="uploadBtn"/>
+				<label for="uploadBtn"><i class="material-icons">attachments</i></label><br>
+				<span id="fileChoosen">No file choosen</span>
+			</div>
+			<div id="tf5">
+				<button><i class="material-icons">send</i></button>
+				<button><i class="material-icons">delete</i></button>
+			</div>
+		</form>
+	</div>
+	<script>
+		/*document.getElementById('buttonid').addEventListener('click', openDialog);
+		function openDialog()
+		{
+			document.getElementById('upload').click();
+		}*/
+		const actualBtn = document.getElementById('uploadBtn');
+		const fileChosen = document.getElementById('fileChoosen');
+		actualBtn.addEventListener('change', function(){fileChosen.textContent = this.files[].name;});
+	</script>
