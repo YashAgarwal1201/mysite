@@ -86,6 +86,14 @@ function homeImageFunc() {
 	$('img, video').bind('contextmenu', function (e) { return false; });
 }
 
+// function for removing some styles if device is not touch screen
+function touchOrNot() {
+	if (( 'ontouchstart' in window ) || ( navigator.maxTouchPoints > 0 ) || ( navigator.msMaxTouchPoints > 0 )) {
+		//alert(9);
+		$('#mainBody').find('*').removeClass('home2Btn-hover nav1a-hover nav2-hover nav3-hover work2b1-hover aheadBack-hover');
+	}
+}
+
 // fucntion for displaying quotes
 function quotesL() {
 	$.ajax({
@@ -160,9 +168,8 @@ function feedbackFormHandeler(arg) {
     		data: { 'Name': name, 'E-mail': email, 'Message': msg, 'website': web},
     		success: function(datal)
     		{
-		       	$(":selected").val('');
-		       	$("#feedback > h2").hide();
-		       	$("#feedback2").text(datal);
+		       	$("input[type='text'], input[type='email'], textarea").val('');
+		       	alert(datal);
     		}
     	});
     }
@@ -198,6 +205,7 @@ function main() {
 	$.ajaxSetup({cache: false});
 	display_datetime();
 	homeImageFunc();
+
 	$('#home2').click(function (event) {				
 		if (event.target.matches('#home2a, #home2a i')) 
 			displayPreviousImage();
@@ -208,6 +216,8 @@ function main() {
 
 		}
 	});
+
+	touchOrNot();
 
 	$('#nav1').click(function (event) {
 		//$('#searchDisplay').slideUP('fast');
@@ -279,20 +289,26 @@ function main() {
 
 	// filters section for canva work section
 	$('#work2b1').click( function (event) {
+		$('#logoId, #posterId, #othersId').show();
+		$('#allBtn, #postersBtn, #logosBtn, #othersBtn').css({'color': 'var(--color4)', 'background-color': 'var(--color1)'});
 		if (event.target.matches('#allBtn')) {
 			$('#logoId, #posterId, #othersId').show();
+			$('#allBtn').css({'color': 'var(--color1)', 'background-color': 'var(--color4)'});
 		}
 		else if (event.target.matches('#logosBtn')) {
-			$('#posterId, #othersId').hide();
 			$('#logoId').show();
+			$('#posterId, #othersId').hide();
+			$('#logosBtn').css({'color': 'var(--color1)', 'background-color': 'var(--color4)'});
 		}
 		else if (event.target.matches('#othersBtn')) {
-			$('#posterId, #logoId').hide();
 			$('#othersId').show();
+			$('#posterId, #logoId').hide();
+			$('#othersBtn').css({'color': 'var(--color1)', 'background-color': 'var(--color4)'});
 		}
 		else if (event.target.matches('#postersBtn')) {
-			$('#othersId, #logoId').hide();
 			$('#posterId').show();
+			$('#othersId, #logoId').hide();
+			$('#postersBtn').css({'color': 'var(--color1)', 'background-color': 'var(--color4)'});
 		}
 		else {
 

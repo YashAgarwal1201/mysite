@@ -41,7 +41,7 @@ $('#work1').ready(function () {
 				x5[i].src = argument.c[i];
 				x5[i].id = "inspIimg" + (i+1).toString();
 				x5[i].setAttribute('width', window.innerWidth - 150);
-				x5[i].setAttribute('height', 700);
+				x5[i].setAttribute('height', (56.25/100)*(window.innerWidth - 150));
 
 				x6[i] = insparr[i];
 				x6[i].appendChild(x5[i]);
@@ -89,7 +89,6 @@ $('#work1').ready(function () {
 		// display code for form templates
 		let arr = $('[id^="ffimg"]');
 		const arrLen = (arr.length);
-		//alert(event.target.id);
 		for (let i = 0; i < arrLen; i++) {
 			if (eleId == arr[i].id) {
 				//alert(22);
@@ -97,6 +96,7 @@ $('#work1').ready(function () {
 					type: 'GET',
 					url: 'main PHP files/formsCode.php',
 					dataType: 'json',
+					contentType: 'application/json',
 					data: { 'index': i, 'elementId': eleId },
 					success: function (argument) {
 						let ida = "#fmcf" + (i+1).toString();
@@ -137,6 +137,7 @@ $('#work1').ready(function () {
 					type: 'GET',
 					url: 'main PHP files/searchsCode.php',
 					dataType: 'json',
+					contentType: 'application/json',
 					data: { 'index': i, 'elementId': eleId },
 					success: function (argument) {
 						let ida = "#smcf" + (i+1).toString();
@@ -181,24 +182,29 @@ $('#work2').ready(function () {
 
 $('[id ^= "cmc"]').ready(function () {
 	// body...
-	let x = document.createElement('video');
-	x.src = "../Milestone/Canva 50 Design Milestone Badge.mp4";
+	let x = document.createElement('img');
+	x.src = "https://drive.google.com/file/d/1zV0UH8tCJJGCK2SesbhtPxlF9uQOqXWP/preview";
 	let src = $("#cmcf3");
 	src.append(x);
 
 	x = document.createElement('img');
-	x.src = "../Milestone/CF1.png";
+	x.src = "https://drive.google.com/file/d/1j0z4aI-5jejLi9G4g4oYIkgN7O2vR8xa/preview";
 	src = $('#cmcf2');
 	src.append(x);
 
 	x = document.createElement('img');
-	x.src = '../Milestone/CF2.png';
+	x.src = 'https://drive.google.com/file/d/1GXHUSbCM4AhWy_eawCdi5bSoQSwt_BJK/preview';
 	src = $('#cmcf1');
 	src.append(x);
 
 	x = document.createElement('img');
-	x.src = '../Milestone/e- Certificate IJSREM.com Yash Agarwal1.png';
+	x.src = 'https://drive.google.com/file/d/15SDXJ0PtwWNtHXUwV5fKaDKoQlcF2-o0/preview';
 	src = $('#cmcf4');
+	src.append(x);
+
+	x = document.createElement('img');
+	x.src = "https://drive.google.com/file/d/1BbEwhSucvD7tbGU4j3aack_kRty7FR9_/preview";
+	src = $('#cmcf5');
 	src.append(x);
 });
 

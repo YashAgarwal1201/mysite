@@ -121,7 +121,8 @@
 				text-align: right;
 				padding: 15px 20px;
 			}
-			.bio2a p, .bio3a p {
+			.bio2a content, .bio3a content {
+				width: 80%;
 				padding: 15px 20px;
 				border-left: 2px solid var(--color4);
 			}
@@ -145,3 +146,18 @@
 				color: var(--color5);
 				font-size: 20px;
 			}
+
+@media screen and (max-width: 1340px) {
+	.bio {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width:  960px) {
+	.bio2a h3, .bio3a h3 {
+		width: ;
+	}
+	.bio1 .container, .bio4 .container {
+		width: 800px;
+	}
+}

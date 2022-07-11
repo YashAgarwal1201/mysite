@@ -1,38 +1,38 @@
 
 	<div class="form">
-		<h1>Feedback form</h1>
-		<form action="" method="">
-			<div id="tf1">
-				<label>Name:</label><br>
-				<input type="text" name="Name" placeholder="Your Name..." required="" autocomplete="off" size="">
-			</div><br><br>
-			<div id="tf2">
-				<label>E-mail:</label><br>
-				<input type="email" name="E-mail" placeholder="Your E-mail..." required="" autocomplete="off" size="">
-			</div><br><br>
-			<div id="tf3">
-				<label>Feedback:</label><br>
-				<textarea name="Message" placeholder="Your Message..." autocomplete="off" size=""></textarea>
+		<h1>Feedback Form</h1>
+		<form>
+			<div class="fields">
+				<div class="c1">
+					<label>Name</label><br>
+					<input type="text" name="Name" required title="Click to Enter your Name" autocomplete="off">
+				</div>
+				<div class="c2">
+					<label>Email</label><br>
+					<input type="email" name="Email" required title="Click to Enter your E-mail">
+				</div>
+				<div class="c3">
+					<label>Message</label><br>
+					<textarea name="Message" title="Click to give your feedback message" autocomplete="off"></textarea>
+				</div>
 			</div>
-			<div id="tf4">
-				<label>Attachment:</label><br>
-				<input type="file" name="Attachment" multiple="on" id="uploadBtn"/>
-				<label for="uploadBtn"><i class="material-icons">attachments</i></label><br>
-				<span id="fileChoosen">No file choosen</span>
-			</div>
-			<div id="tf5">
-				<button><i class="material-icons">send</i></button>
-				<button><i class="material-icons">delete</i></button>
+			<div class="action">
+				<button type="submit" title="Click to send your feedback"><i class="material-icons">send</i></button>
+				<button type="reset" title="Click to reset this form"><i class="material-icons">delete</i></button>
 			</div>
 		</form>
 	</div>
 	<script>
-		/*document.getElementById('buttonid').addEventListener('click', openDialog);
-		function openDialog()
-		{
-			document.getElementById('upload').click();
-		}*/
-		const actualBtn = document.getElementById('uploadBtn');
-		const fileChosen = document.getElementById('fileChoosen');
-		actualBtn.addEventListener('change', function(){fileChosen.textContent = this.files[].name;});
+		$(document).click( function (ar) {
+			$('form div').css({'animation': 'none'});
+			if (ar.target.matches('.c1, .c1 input')) 
+				$('.c1').css({'animation': 'an1 5s linear infinite'});
+			else if(ar.target.matches('.c2, .c2 input'))
+				$('.c2').css({'animation': 'an1 5s linear infinite'});	
+			else if(ar.target.matches('.c3, .c3 textarea')) 
+				$('.c3').css({'animation': 'an1 5s linear infinite'});
+			else
+				$('form div').css({'animation': 'none'});
+			$('#rId').text($('[type="range"]').val());
+		});
 	</script>

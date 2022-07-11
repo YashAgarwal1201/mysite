@@ -5,7 +5,7 @@
 .work {
 	width: 100%;
 	padding: 15px 30px;
-	display: flex;
+	display: none;
 	flex-flow: column wrap;
 	justify-content: start;
 	align-items: flex-start;
@@ -23,14 +23,15 @@
 			justify-content: space-between;
 			align-items: center;
 		}
-		.work1a1 button, .work1b1 button, .work1c1 button {
+		/* class="aheadBack aheadBack-hover"*/
+		.aheadBack {
 			padding: 20px;
 			border-radius: 50%;
 			background-color: var(--color4);
 			color: var(--color1);
 			cursor: pointer;
 		}
-		.work1a1 button:hover, .work1b1 button:hover, .work1c1 button:hover {
+		.aheadBack-hover:hover {
 			background-color: var(--color3);
 			color: var(--color5);
 		}		
@@ -235,3 +236,20 @@ div .modalContainerCollection .modalContentCollection div content *::-webkit-scr
 	border: 5px solid var(--color4);
 }		
 
+
+@media screen and (max-width: 1340px) {
+	.work2b2 .canvaWork {
+		width: 400px;
+		height: 400px;
+	}
+}
+
+@media screen and (max-width: 1160px) {
+	.work2b2 .canvaWork {
+		width: 350px;
+		height: 350px;
+	}
+	div .modalContainerCollection .modalContentCollection div section {
+		width: 100%;
+	}
+}

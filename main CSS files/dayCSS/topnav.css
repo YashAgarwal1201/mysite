@@ -19,7 +19,7 @@
 		padding: 20px;
 		border-bottom: 2px solid var(--color1);
 	}
-	.nav1a button:hover {
+	.nav1a-hover button:hover {
 		border-color: var(--color3);
 		color: var(--color3);
 		cursor: pointer;
@@ -29,11 +29,11 @@
 		color: var(--color1);
 		border-color: var(--color5);
 	}
-	.nav1a #nav1a_Btn1:hover {
+	/*.nav1a #nav1a_Btn1:hover {
 		background-color: var(--color3);
 		border-color: var(--color3);
 		color: var(--color5);
-	}
+	}*/
 	.search1 {
 		padding: 10px;
 		line-height: 30px;
@@ -85,7 +85,8 @@
 	color: var(--color4);
 	cursor: pointer;
 }
-.nav2 button:hover, .nav3 button:hover, .work2b1 button:hover {
+.nav2-hover button:hover, .nav3-hover button:hover, .work2b1-hover button:hover {
+	border: 10px solid black;
 	background-color: var(--color3);
 	color: var(--color4);
 }
