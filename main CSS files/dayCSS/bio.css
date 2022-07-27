@@ -3,12 +3,27 @@
 
 .bio {
 	width: 100%;
-	padding: 15px 30px;
+	padding-left: 25px;
 	display: none;
 	flex-flow: column wrap;
 	justify-content: start;
 	align-items: flex-start;
+	color: var(--color5);
 }
+	.bioHead { 
+		width: 100%; 
+		padding: 30px 0px 30px 0px; 
+		display: flex; 
+		flex-flow: row wrap; 
+		justify-content: space-around; 
+		align-items: flex-end;
+	}
+		.bioHeadImg {
+			width: 49%;
+		}
+		.bioHeadImg img {
+			width: 100%;
+		}
 	.bio1 {
 		display: block;
 		width: 100%;
@@ -21,7 +36,7 @@
 			overflow-x: auto;
 			overflow-y: hidden;
 		}
-		.bio1 .mainContainer::-webkit-scrollbar, .bio4, .bio4a::-webkit-scrollbar {
+		.bio1 .mainContainer::-webkit-scrollbar, .bio4a::-webkit-scrollbar {
 			display: none;
 		}
 			.bio1 .subContainer, .bio4 .subContainer {
@@ -52,7 +67,7 @@
 					color: var(--color2);
 				}
 				.bio1 .container i, .bio4 .container i {
-					color: #a24252;
+					color: var(--color2);
 				}
 				.bio1 .container:hover, .bio4 .container:hover {
 					background: linear-gradient(var(--color3) 0% 80%, var(--color1) 80% 90%, var(--color3) 90% 100%);
@@ -97,7 +112,6 @@
 	}
 		.bio2a, .bio3a {
 			width: 100%;
-			padding: 10px;
 			display: flex;
 			flex-flow: column wrap;
 			align-items: flex-start;
@@ -112,12 +126,12 @@
 			align-items: center;
 			color: var(--color4);
 		}
-		.bio2a div:hover, .bio3a div:hover {
+		.bio2a-hover div:hover, .bio3a-hover div:hover {
 			background-color: var(--color3);
 			color: var(--color2);
 		}
 			.bio2a h3, .bio3a h3 {
-				width: 15%;
+				width: 20%;
 				text-align: right;
 				padding: 15px 20px;
 			}
@@ -129,10 +143,6 @@
 			.bio3a content {
 				color: var(--color4);
 			}
-	/*.bio3 {
-		display: block;
-		width: 100%;
-	}*/
 	.bio4 {
 		display: none;
 		width: 100%;

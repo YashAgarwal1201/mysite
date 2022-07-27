@@ -22,17 +22,34 @@
 
 * { 
 	scroll-behavior: smooth;
-	box-sizing: border-box;
-	line-height: 1.5; 
 }
 body {
-	background-color: var(--color1); 
+	background-color: var(--color1);
 }
-h1, h2, h3, i, iframe { 
+h1, h2, h3, i, iframe {
 	font-family: 'Signika Negative', sans-serif; 
+}
+h1 {
+	font-size: 70px;
+}
+h2 {
+	font-size: 50px;
+}
+h3 {
+	font-size: 35px;
+}
+h4 {
+	font-size: 25px;
+}
+h5 {
+	font-size: 17;
+}
+h6 {
+	font-size: 10px;
 }
 p, button, a, span, summary, details, label, ul, li, div, content *, section { 
 	font-family: 'Fresca', sans-serif;
+	font-size: 20px;
 }
 u:hover {
 	cursor: pointer;
@@ -44,7 +61,12 @@ input::placeholder, textarea::placeholder, input, textarea {
 
 
 .blank {
-	height: 50px;
+	height: 150px;
+	width: auto;
+	padding: 250px;
+	background-image: url('../background2.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 body::-webkit-scrollbar { 

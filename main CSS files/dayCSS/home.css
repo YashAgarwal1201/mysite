@@ -1,38 +1,42 @@
 
 /* Home section CSS */
+
 .home {
+	height: 100%;
 	width: 100%;
-	padding: 30px 0px 0px;
-	background-color: var(--color4);
+	padding: 30px 0px 30px 0px;
+	/*background-color: var(--color4);*/
 	display: flex;
-	flex-flow: column;
+	flex-flow: row wrap;
 	justify-content: space-around;
-	align-items: center;
+	align-items: flex-end;
 }
-	.home1, .home3 {
-		text-align: center;
-		color:  var(--color1);
+	.home1, .home2 {
+		width: 49%;
+		height: 100%;
 	}
-	.home1 h1 {
-		font-size: 50px;
-		color: var(--color2);
-	}
-	.home2 {
-		width: 100%;
-		padding: 20px 30px;
+	.home1 {
+		padding: auto 15px 15px auto;
 		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
-		align-items: center;
+		flex-flow: column wrap;
+		align-items: flex-end;
+		justify-content: flex-end;
+		text-align: center;
 	}
-		.home2image, .home2Btn {
-			width: 50%;
+		.home1 h1 {
+			color: var(--color5);
 		}
-		.home2image img {
+		.home1 #quotez {
 			width: 100%;
-			height: auto;
+			height: 100px;
+			text-align: right;
+			/*background-color: var(--color3);*/
+			color: var(--color5);
 		}
-		.home2Btn {
+		.home2 img {
+			width: 100%;
+		}
+		/*.home2Btn {
 			width: 100px;
 			margin: 100px;
 			height: 100px;
@@ -67,16 +71,7 @@
 			vertical-align: middle;
 			font-size: 60px;
 			width: 100%;
-		}
-	.home3  {
-		padding-bottom: 30px;
-	}	
-	.home4 {
-		width: 100%;
-		padding: 50px 30px 50px 30px;
-		background-color: var(--color3);
-		color: var(--color5);
-	}
+		}*/	
 
 @media screen and (max-width: 1340px) {
 	.home {

@@ -4,13 +4,27 @@
 
 .work {
 	width: 100%;
-	padding: 15px 30px;
+	padding-left: 25px;
 	display: none;
 	flex-flow: column wrap;
 	justify-content: start;
 	align-items: flex-start;
 	color: var(--color5);
 }
+	.workHead { 
+		width: 100%; 
+		padding: 30px 0px 30px 0px; 
+		display: flex; 
+		flex-flow: row wrap; 
+		justify-content: space-around; 
+		align-items: flex-end;
+	}
+		.workHeadImg {
+			width: 49%;
+		}
+		.workHeadImg img {
+			width: 100%;
+		}
 	.work1 {
 		display: block;
 		width: 100%;
@@ -63,10 +77,10 @@
 					margin-right: 15px;
 					padding: 0px;
 				}
-				.work1a2i .container:hover, .work1b2i .container:hover {
+				/*.work1a2i .container:hover, .work1b2i .container:hover {
 					z-index: 1;
 					opacity: 0.7;
-				}
+				}*/
 				.work1a2i .container .thumbnail, .work1b2i .container .thumbnail {
 					width: 100%;
 					height: 100%;
@@ -78,7 +92,7 @@
 					transition: 0.2s ease-in-out;
 					backface-visibility: hidden;
 				}
-				.work1a2i .container:hover .thumbnail img, .work1b2i .container:hover .thumbnail img {
+				.work1a2i-hover .container:hover .thumbnail img, .work1b2i-hover .container:hover .thumbnail img {
 					z-index: 1;
 				  	opacity: 0.5;	
 				}
@@ -93,7 +107,7 @@
 				  	text-align: left; 
 				  	white-space: nowrap;
 				}
-				.work1a2i .container:hover .middle, .work1b2i .container:hover .middle {
+				.work1a2i-hover .container:hover .middle, .work1b2i-hover .container:hover .middle {
 				  	opacity: 1; 
 				}
 				.middle .text {
@@ -138,6 +152,48 @@
 	.work3 {
 		display: none;
 	}
+		.work3 #wixBtn {
+			width: 100px;
+			margin: 100px;
+			height: 100px;
+			padding: 20px;
+			border-radius: 50%;
+			cursor: pointer;
+			background-color: var(--color2);
+			color: var(--color5);
+			position: relative;
+		}
+		.work3 .wixBtn-hover:hover {
+			background-color: var(--color1);
+			color: var(--color3);
+		}
+		.work3 #wixBtn::after {
+			content: '';
+			position: absolute;
+			top: -18px;
+			left: -18px;
+			padding: 10px;
+			margin: auto;
+			border: 2px dashed var(--color3);
+			height: 110px;
+			width: 110px;
+			border-radius: 50%;
+			animation: spin2 10s linear infinite;
+		}
+		@keyframes spin2 {
+			100% { transform: rotateZ(360deg); }
+		}
+		.work3 #wixBtn i {
+			vertical-align: middle;
+			font-size: 60px;
+			width: 100%;
+		}
+			.work3b {
+				width: 100%;
+			}
+			.work3b img {
+				width: 25%;
+			}
 	.work4 {
 		display: none;
 	}		  	
@@ -165,6 +221,8 @@ div .modalContainerCollection .modalContentCollection {
 	position: relative; 
 }
 div .modalContainerCollection .modalContentCollection div { 
+	width: 100%;
+	height: 100%;
 	display: flex; 
 	flex-flow: row wrap; 
 	justify-content: space-evenly; 
@@ -229,7 +287,7 @@ div .modalContainerCollection .modalContentCollection div content *::-webkit-scr
 	vertical-align: middle; 
 }	
 
-.modalContentCollection img, .modalContentCollection video { 
+.modalContentCollection div img { 
 	width: 100%; 
 	height: 100%; 
 	margin: auto;

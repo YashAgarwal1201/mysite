@@ -1,11 +1,4 @@
-	
-	<!--div class="bio1a1" id="bio1a1">
-		<h2>Forms</h2>
-		<div>
-			<button><i class="material-icons">chevron_left</i></button>
-			<button><i class="material-icons">chevron_right</i></button>
-		</div>
-	</div-->
+
 		<div class="subContainer">
 			<div class="container arrow">
 				<p style="font-size: 25px; font-weight: bolder;">June, 2022</p>

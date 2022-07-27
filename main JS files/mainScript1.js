@@ -1,4 +1,4 @@
-//import * from "mainScript2.js";
+//import script2Func from "./mainScript2.js";
 
 // The date time function
 function display_date() {
@@ -32,9 +32,13 @@ function display_date() {
 	}
 
 	//var x1 = month + "/" + dt + "/" + x.getFullYear();
-	x1 = x1 + " - " +  hours + ":" +  minutes + ":" +  seconds + " " + ampm;
+	//x1 = x1 + " - " +  hours + ":" +  minutes + ":" +  seconds + " " + ampm;
+	//x1 = hours + "\n" + minutes;
 	
-	$('[id="nav1b"]').text(x1);
+	//$('[id="nav1b"]').text(x1);
+	$('#hours').text(hours);
+	$('#minutes').text(minutes);
+
 	display_datetime();
 }
 function display_datetime()
@@ -44,25 +48,21 @@ function display_datetime()
 }
 
 
-let images = [], x = -1;
+/*let images = [], x = -1;
 
 function displayPreviousImage() 
 {
     x = (x <= 0) ? images.length - 1 : x - 1;
-    document.getElementById("home2bi").src = images[x];
+    document.getElementById("home2a").src = images[x];
 }
 function displayNextImage() 
 {
     x = (x === images.length - 1) ? 0 : x + 1;
-    document.getElementById("home2bi").src = images[x];
-}
+    document.getElementById("home2a").src = images[x];
+}*/
 
 // Function For Home Page Images
 function homeImageFunc() {
-
-	let img = document.createElement('img');
-	//img.src = "main Images/YA.png";
-	img.id = "home2bi";
 	
 	$.ajax({
 		type: 'POST',
@@ -72,16 +72,23 @@ function homeImageFunc() {
 		data: { folder: 'main Images' },
 		success: function (argument) {
 			var arrayy = argument;
-			$('#home2bi').prop('src', argument[0]);
 			let len = argument.length;
 			for (var i = argument.length - 1; i >= 0; i--) {
-				images[i] = argument[i];
+
+				let x = [], x1 = [];
+				let head = document.querySelectorAll('#bioHeadImg, #workHeadImg, #home2');
+				for (let i = 0; i < argument.length; i++) 
+				{
+					x[i] = document.createElement('img');
+					x[i].src = argument[i];
+					x[i].id = "headImg" + (i+1).toString();
+
+					x1[i] = head[i];
+					x1[i].appendChild(x[i]);
+				}
 			}
 		}
 	});
-
-	let src = document.getElementById('home2b');
-	src.appendChild(img);
 
 	$('img, video').bind('contextmenu', function (e) { return false; });
 }
@@ -89,8 +96,7 @@ function homeImageFunc() {
 // function for removing some styles if device is not touch screen
 function touchOrNot() {
 	if (( 'ontouchstart' in window ) || ( navigator.maxTouchPoints > 0 ) || ( navigator.msMaxTouchPoints > 0 )) {
-		//alert(9);
-		$('#mainBody').find('*').removeClass('home2Btn-hover nav1a-hover nav2-hover nav3-hover work2b1-hover aheadBack-hover');
+		$('#mainBody').find('*').removeClass('home2Btn-hover nav1a-hover nav2-hover nav3-hover work2b1-hover aheadBack-hover bio2a-hover bio3a-hover work1a2i-hover work1b2i-hover wixBtn-hover');
 	}
 }
 
@@ -194,19 +200,14 @@ function feedbackFormStyle(arg) {
 	}
 }
 
-// To be executed after the document has been ready
-$(document).ready(function () {
-	$.ajaxSetup({cache: false});
-	main();
-});
-
 // The main function
 function main() {
+	
 	$.ajaxSetup({cache: false});
 	display_datetime();
 	homeImageFunc();
 
-	$('#home2').click(function (event) {				
+	/*$('#home2').click(function (event) {				
 		if (event.target.matches('#home2a, #home2a i')) 
 			displayPreviousImage();
 		else if (event.target.matches('#home2c, #home2c i')) 
@@ -215,34 +216,38 @@ function main() {
 		{
 
 		}
-	});
+	});*/
 
 	touchOrNot();
 
 	$('#nav1').click(function (event) {
 		//$('#searchDisplay').slideUP('fast');
 		if (event.target.matches('#nav1a_Btn1, #nav1a_Btn1 i')) {
-			$('#bio, #work').hide();
+			$('#bio, #work, #feedback').hide();
 			$('#home').slideDown();
 		}
 		else if (event.target.matches('#nav1a_Btn2, #nav1a_Btn2 i')) {
-			$('#home, #work').hide();
+			$('#home, #work, #feedback').hide();
 			$('#bio').slideDown();
 		}
 		else if (event.target.matches('#nav1a_Btn3, #nav1a_Btn3 i')) {
-			$('#home, #bio').hide();
+			$('#home, #bio, #feedback').hide();
 			$('#work').slideDown();
 		}
-		else if (event.target.matches('#searchBar1a, #searchBar1a_Btn1')) {
+		else if (event.target.matches('#nav1a_Btn4, #nav1a_Btn4 i')) {
+			$('#home, #bio, #work').hide();
+			$('#feedback').slideDown();
+		}
+		/*else if (event.target.matches('#searchBar1a, #searchBar1a_Btn1')) {
 			$('#searchBar1a').show(300);
 			$('#nav1c').css('border', '2px solid var(--color5)');
 			$('#searchBar1a_Btn1').hide(300).css({'color':'var(--color2)', 'cursor':'default'});
-		}
+		}*/
 		else
 		{
-			$('#searchBar1a').hide(300).val('');
-			$('#nav1c').css('border', '2px solid var(--color1)');
-			$('#searchBar1a_Btn1').show(300).css({'color':'var(--color1)', 'cursor':'pointer'});
+			//$('#searchBar1a').hide(300).val('');
+			//$('#nav1c').css('border', '2px solid var(--color1)');
+			//$('#searchBar1a_Btn1').show(300).css({'color':'var(--color1)', 'cursor':'pointer'});
 		}
 	});
 
@@ -328,5 +333,15 @@ function main() {
 	quotesL();
 	setInterval(quotesL, 20000);
 
+	//prevent right click menu on images and video
 	$('img, video').bind('contextmenu', function (e) { return false; });
 }
+//End of Main Function
+
+
+
+// To be executed after the document has been ready
+$(document).ready(function () {
+	$.ajaxSetup({cache: false});
+	main();
+});
